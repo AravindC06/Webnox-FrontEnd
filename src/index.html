@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <script defer src="style.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <style>
+        .custom-page {
+            background-color: bisque;
+            width: 15px;
+            top: 1.5rem;
+            height: 15px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .custom-page.is-active {
+            background-color: blue;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="font-sans">
+        <div class="fixed z-[100] bottom-5 right-5">
+            <a href="#home"><i class="fa-solid fa-chevron-up p-5 text-lg bg-blue-700 rounded-lg text-white"></i></a>
+        </div>
+        <div id="home" class="text-white flex justify-center relative h-[90vh] bg-customCyan">
+            <section class="absolute flex items-center top-4 z-[2] w-[85vw] sm:ps-5 ">
+                <ul class="flex flex-1 flex-col md:flex-row md:justify-normal gap-5 gap-y-2">
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i>
+                        <p class="text-sm  ">+123-456-7890</p>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope pt-1"></i>
+                        <p class="text-sm">info@yourdomain.com</p>
+                    </li>
+                </ul>
+                <ul class="lg:flex gap-4 justify-end hidden">
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-linkedin-in"></i></li>
+                </ul>
+                <button
+                    class="bg-blue-600 text-white px-3 py-1 rounded ml-4 font-semibold capitalize sm:uppercase sm:font-bold sx:text-base ">
+                    <i class="fa-solid fa-calculator pe-2 hidden sm:inline-block"></i>get a quote
+                </button>
+            </section>
+
+            <header class="absolute w-[85vw] z-[2] top-24 sm:top-20 rounded-md bg-white bg-opacity-80 sm:py-5">
+                <nav class="flex justify-between items-center px-8 py-4">
+                    <a href="#" class="flex items-center">
+                        <img class="h-6 sm:h-11 w-auto" src="./assets/amisologo.png" alt="Amiso Logo">
+                    </a>
+                    <div class="flex lg:hidden">
+                        <i class="fa-solid fa-bars sm:text-2xl text-black"></i>
+                    </div>
+                    <div class="hidden lg:flex gap-8">
+                        <a href="#home" class="text-md uppercase font-bold text-gray-900">Home</a>
+                        <a href="#about" class="text-md uppercase font-bold text-gray-900">About</a>
+                        <a href="#" class="text-md uppercase font-bold text-gray-900">Pages</a>
+                        <a href="#gallery" class="text-md uppercase font-bold text-gray-900">Gallery</a>
+                        <a href="#blog" class="text-md uppercase font-bold text-gray-900">Blog</a>
+                        <a href="#contact" class="text-md uppercase font-bold text-gray-900">Contact</a>
+                    </div>
+                </nav>
+            </header>
+
+            <section class="absolute hidden sm:block carousel-image inset-0 z-[0]">
+                <img src="./assets/img2.png" class="h-full w-full object-cover" alt="Background Image" />
+            </section>
+
+            <section class="carousel absolute top-[13rem] w-full z-[2]">
+                <button class="absolute text-2xl md:text-5xl left-4 top-1/2 text-white" onclick="previousCard()">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="w-full flex justify-center">
+                    <div class="carousel-content w-[70vw] md:w-[80vw] flex flex-col gap-1">
+                        <h4 class="carousel-pretitle sm:text-md xl:text-xl py-2 font-medium uppercase"></h4>
+                        <h1 class="carousel-title text-2xl sm:text-4xl xl:text-7xl md:w-[70%] font-bold uppercase"></h1>
+                        <a class="sm:text-md xl:text-xl w-fit font-semibold px-8 py-2 border-solid border-2 mt-10 text-white rounded"
+                            href="#">Contact Us</a>
+                    </div>
+                </div>
+                <button class="absolute text-2xl md:text-5xl right-4 top-1/2 text-white" onclick="nextCard()">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </section>
+        </div>
+        <div class="bg-blue-400 flex justify-center">
+            <section class="w-[85vw] relative -top-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 p-4">
+                <div class="text-center bg-white p-10">
+                    <i class="fa-solid fa-hands-clapping text-6xl text-blue-400"></i>
+                    <h1 class="text-2xl font-bold py-3 text-gray-800">Professional Cleaning</h1>
+                    <h2 class="text-[1.1rem] font-medium text-slate-400">House Keeping is responsible for minor security
+                        in hotel eco-system
+                        for food and cleaner
+                        through.
+                    </h2>
+                </div>
+                <div class="text-center bg-white p-10">
+                    <i class="fa-solid fa-truck-fast text-6xl text-blue-400"></i>
+                    <h1 class="text-2xl font-bold py-3 text-gray-800">Fast and efficient</h1>
+                    <h2 class="text-[1.1rem] font-medium text-slate-400">House Keeping is responsible for minor security
+                        in hotel eco-system
+                        for food and cleaner
+                        through.
+                    </h2>
+                </div>
+                <div class="text-center bg-white p-10">
+                    <i class="fa-solid fa-house-circle-check text-6xl text-blue-400"></i>
+                    <h1 class="text-2xl font-bold py-3 text-gray-800">Renew your look</h1>
+                    <h2 class="text-[1.1rem] font-medium text-slate-400">House Keeping is responsible for minor security
+                        in hotel eco-system
+                        for food and cleaner
+                        through.
+                    </h2>
+                </div>
+                <div>
+                    <h1 class="text-4xl font-extrabold text-gray-800">A Clean House is a Happy Place!</h1>
+                    <h2 class="text-white text-xl font-bold pt-3">Washla has met the demands of a growing world.</h2>
+                </div>
+                <div>
+                    <h2
+                        class="text-white text-xl font-semibold leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-2">
+                        House Keeping is responsible for minor security in hotel eco-system for food and cleaner
+                        through. House Keeping is responsible for minor security in hotel eco-system for food and
+                        cleaner
+                        through.
+                    </h2>
+                </div>
+                <div>
+                    <h2 class="text-white text-xl font-semibold">House Keeping is responsible for minor security in
+                        hotel
+                        eco-system for food and cleaner. House Keeping is responsible for minor security in hotel
+                        eco-system for food and cleaner.
+                        through.</h2>
+                </div>
+            </section>
+        </div>
+        <div id="about">
+            <section class="text-center pt-[5rem] pb-[5rem] flex items-center flex-col">
+                <h3 class="text-md uppercase font-extrabold text-slate-400">why choose us</h3>
+                <h2 class="uppercase text-4xl font-bold text-gray-800">Tradition of Trust</h2>
+                <p class="py-3 text-base lg:w-[40%] font-medium text-slate-400">We specialise in intelligent & effective
+                    Search and belives
+                    in the power of partnership to grow
+                    business.</p>
+                <section class="w-[85vw] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                    <div class="bg-white pt-6 sm:px-[4rem] pb-10">
+                        <i
+                            class="shadow-iconBoxShadow fa-solid fa-user-group text-4xl border-2 p-8 text-blue-300 rounded-full"></i>
+                        <h1 class="text-2xl font-bold pt-4 pb-2 text-gray-800">Professional Team</h1>
+                        <h2 class="text-[1.1rem] font-semibold text-slate-400">House Keeping is responsible for minor
+                            security in hotel
+                            eco-system for food and cleaner
+                            through.
+                        </h2>
+                    </div>
+                    <div class="bg-white pt-6 sm:px-[4rem] pb-10">
+                        <i
+                            class="shadow-iconBoxShadow fa-solid fa-headset text-4xl border-2 p-8 text-blue-300 rounded-full"></i>
+                        <h1 class="text-2xl font-bold pt-4 pb-2 text-gray-800">24/7 Services</h1>
+                        <h2 class="text-[1.1rem] font-semibold text-slate-400">House Keeping is responsible for minor
+                            security in hotel
+                            eco-system for food and cleaner
+                            through.
+                        </h2>
+                    </div>
+                    <div class="bg-white pt-6 sm:px-[4rem] pb-10">
+                        <i
+                            class="shadow-iconBoxShadow fa-solid fa-gear text-4xl border-2 p-8 text-blue-300 rounded-full"></i>
+                        <h1 class="text-2xl font-bold pt-4 pb-2 text-gray-800">Professional Team</h1>
+                        <h2 class="text-[1.1rem] font-semibold text-slate-400">House Keeping is responsible for minor
+                            security in hotel
+                            eco-system for food and cleaner
+                            through.
+                        </h2>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div>
+            <section class="lg:relative lg:h-[35rem]">
+                <div class="lg:w-[50%] lg:absolute h-full bg-bgImageColor">
+                    <div class="lg:absolute h-full inset-0 z-[0]">
+                        <img src="./assets/img2.png" class="h-full w-full object-cover" alt="Background Image" />
+                    </div>
+                </div>
+                <div
+                    class="lg:w-[57%] flex flex-col items-center lg:items-start text-center lg:text-start lg:absolute right-0 h-full lg:top-[6em] py-10 lg:py-20 lg:p-20 bg-white shadow-iconBoxShadow">
+                    <h5 class="uppercase text-slate-400 font-extrabold py-1">maid For you</h5>
+                    <h1 class="uppercase text-4xl font-bold text-gray-800">A Cleaner Place is a Safer Place.</h1>
+                    <h2 class="text-base font-medium py-3 text-slate-400">House Keeping is responsible for minor
+                        security
+                        in hotel
+                        eco-system for food and cleaner
+                        through.
+                    </h2>
+                    <section class="w-[85vw] lg:w-auto grid grid-cols-1 sm:grid-cols-2 gap-5 py-9">
+                        <div class="bg-white">
+                            <i class="fa-solid fa-user-group text-4xl text-blue-300"></i>
+                            <h1 class="text-2xl text-gray-800 font-bold py-2">Professional Cleaning</h1>
+                            <h2 class="text-[1.1rem] font-semibold text-slate-400">House Keeping is responsible for
+                                minor security in hotel
+                                eco-system for food and cleaner
+                                through.
+                            </h2>
+                        </div>
+                        <div class="bg-white">
+                            <i class="fa-solid fa-headset text-4xl text-blue-300"></i>
+                            <h1 class="text-2xl text-gray-800 font-bold py-2">24/7 Services</h1>
+                            <h2 class="text-[1.1rem] font-semibold text-slate-400">House Keeping is responsible for
+                                minor security in hotel
+                                eco-system for food and cleaner
+                                through.
+                            </h2>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section
+                class="pb-[3rem] pt-[5rem] lg:pt-[10rem] flex text-center items-center flex-col bg-[url('./assets/clean.jpeg')] bg-cover bg-center ">
+                <h3 class="uppercase text-white font-extrabold py-1">Why Choose Us</h3>
+                <h2 class="text-4xl font-bold text-gray-800">Our Great Service</h2>
+                <p class="py-3 text-base font-medium text-white lg:w-[40%]">Restoring the beauty and freshness of all
+                    your upholstered fabrics and take the work out of housework for you.</p>
+                <section id="service" class="service-section w-[85vw] p-4">
+                    <div id="service-container"
+                        class="service-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-evenly gap-[2rem] py-16">
+                    </div>
+                    <div id="buttons-container"
+                        class="buttons-container flex flex-row justify-center gap-[0.5rem] w-full"></div>
+                </section>
+            </section>
+        </div>
+        <div id="gallery">
+            <section class="py-[5rem] flex items-center flex-col bg-white bg-cover bg-center ">
+                <h3 class="text-center text-md uppercase text-slate-400 font-extrabold">Meet Our</h3>
+                <h2 class="text-center text-4xl text-gray-800 font-extrabold">Our Team</h2>
+                <p class="text-center py-3 text-base font-semibold lg:w-[40%] text-slate-400">We specialize in
+                    intelligent & effective
+                    Search and believe
+                    in the power of partnership to grow business.</p>
+                <section class="w-[85vw] p-4">
+                    <div id="image-carousel" class="splide w-[85vw]" aria-label="Beautiful Images">
+                        <div class="splide__track h-[600px]">
+                            <ul class="splide__list">
+                                <li class="splide__slide flex h-[500px] flex-col items-center relative bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner2.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Monica Gordon</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex h-[500px] flex-col items-center relative bg-cover bg-center"
+                                    style="background-image: url('./assets/clean.jpeg')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Laura Jones</h2>
+                                        <h6 class="text-slate-400">Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner3.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Sara Ryan</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/img2.png')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Sara Ryan</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaning1.jpeg')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Laura Jones</h2>
+                                        <h6 class="text-slate-400">Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner3.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Monica Gordon</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner2.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Monica Gordon</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner2.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Laura Jones</h2>
+                                        <h6 class="text-slate-400">Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner3.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Sara Ryan</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner3.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Sara Ryan</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner2.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Laura Jones</h2>
+                                        <h6 class="text-slate-400">Cleaner</h6>
+                                    </div>
+                                </li>
+                                <li class="splide__slide flex flex-col items-center relative h-[500px] bg-cover bg-center"
+                                    style="background-image: url('./assets/cleaner2.webp')">
+                                    <div
+                                        class="absolute shadow-md w-[85%] text-center py-6 -bottom-[4rem] bg-white text-gray-800">
+                                        <h2 class="font-bold text-2xl">Monica Gordon</h2>
+                                        <h6 class="text-slate-400">House Cleaner</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <div id="blog">
+            <div
+                class="relative bg-[url('./assets/scrub.webp')] h-[85vh] bg-cover bg-center flex flex-col items-center justify-center">
+                <div class="bg-blue-300 absolute inset-0 bg-opacity-40 w-full"></div>
+                <div class="relative -top-10 z-[10] flex flex-col gap-4 items-center">
+                    <button class="border-2 p-2 rounded-full border-blue-700">
+                        <i class="fa-solid fa-circle-play text-6xl text-blue-700"></i>
+                    </button>
+                    <h4 class="text-xl text-white font-semibold">Cleaning your Worries Away</h4>
+                    <h1 class="text-5xl font-extrabold text-white text-center">Need Help with Cleaning?</h1>
+                    <a href="#"
+                        class="sm:text-md xl:text-xl bg-blue-500 w-fit font-semibold px-8 py-2 text-white rounded">
+                        Request Call Back
+                    </a>
+                </div>
+            </div>
+            <div class="w-full flex justify-center p-4">
+                <div class="relative -top-16 w-[85%]">
+                    <div class="flex flex-wrap justify-between bg-white shadow-lg p-1 lg:p-8 gap-y-[3rem]">
+                        <div
+                            class="flex flex-row justify-start lg:justify-evenly items-center gap-4 sm:border-r-[1.5px] px-5 sm:border-slate-400 w-full sm:w-1/2 lg:w-1/4">
+                            <i class="fa-regular fa-face-smile-beam text-blue-600 text-5xl"></i>
+                            <div>
+                                <h1 class="text-3xl text-gray-800 font-extrabold">385</h1>
+                                <h3 class="text-lg text-slate-400">Happy Customers</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row justify-start lg:justify-evenly items-center gap-4 sm:border-r-[1.5px] px-5 sm:border-slate-400 w-full sm:w-1/2 lg:w-1/4">
+                            <i class="fa-regular fa-face-smile-beam text-blue-600 text-5xl"></i>
+                            <div>
+                                <h1 class="text-3xl text-gray-800 font-extrabold">842</h1>
+                                <h3 class="text-lg text-slate-400">Houses Cleared</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row justify-start lg:justify-evenly items-center gap-4 sm:border-r-[1.5px] px-5 sm:border-slate-400 w-full sm:w-1/2 lg:w-1/4">
+                            <i class="fa-regular fa-face-smile-beam text-blue-600 text-5xl"></i>
+                            <div>
+                                <h1 class="text-3xl text-gray-800 font-extrabold">489</h1>
+                                <h3 class="text-lg text-slate-400">Awards Received</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row justify-start lg:justify-evenly items-center gap-4 w-full px-5 sm:w-1/2 lg:w-1/4">
+                            <i class="fa-regular fa-face-smile-beam text-blue-600 text-5xl"></i>
+                            <div>
+                                <h1 class="text-3xl text-gray-800 font-extrabold">1344</h1>
+                                <h3 class="text-lg text-slate-400">Glass Cleaned</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <section class="pb-[14rem] pt-[1rem] flex items-center flex-col bg-white">
+                <h3 class="text-center text-md uppercase text-slate-400 font-extrabold">why choose us</h3>
+                <h2 class="text-center text-4xl font-extrabold text-gray-800">Recent News</h2>
+                <p class="text-center py-3 text-lg text-slate-400 lg:w-[40%]">We specialize in intelligent & effective
+                    Search and believe in the power of partnership to grow business.</p>
+                <section class="w-[85vw] p-4">
+                    <div id="servsdice-container"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-evenly gap-[2rem] min-[640px]:gap-y-[20rem] gap-y-[14rem] py-16">
+                        <div
+                            class="service-card flex justify-center relative py-10 h-[300px] bg-[url('./assets/cleaning1.jpeg')] bg-cover bg-center">
+                            <div class="absolute bg-blue-400 text-center text-white px-5 py-3 right-0 top-0">
+                                <h1 class="text-3xl font-bold">12</h1>
+                                <h4 class="text-lg">Nov</h4>
+                            </div>
+                            <div
+                                class="absolute shadow-lg text-red-50 w-[85%] p-6 top-[14rem] border-b-4 border-blue-500 bg-white ">
+                                <h4 class="text-base text-slate-400 uppercase">cleaning</h4>
+                                <h1 class="text-gray-800 text-xl font-extrabold">Temporary Ruling Issued</h1>
+                                <h5 class="py-3 text-base font-bold text-slate-400">Washla has met the demands of a
+                                    growing world cleaning tremendous.</h5>
+                                <div class="flex py-3 gap-5 items-center flex-nowrap">
+                                    <div class="w-14 h-14 rounded-full bg-blue-200 overflow-hidden">
+                                        <img src="./assets/img2.png" alt="User-Image"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-base font-bold text-gray-800">Martha Smith</h5>
+                                        <p class="text-sm font-medium text-slate-400">Washla CEO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="service-card flex justify-center relative pt-10 pb-10 h-[300px] bg-[url('./assets/cleaner2.webp')] bg-cover bg-center">
+                            <div class="absolute bg-blue-400 text-center text-white px-5 py-3 right-0 top-0">
+                                <h1 class="text-3xl font-bold">11</h1>
+                                <h4 class="text-lg">Nov</h4>
+                            </div>
+                            <div
+                                class="absolute shadow-lg text-red-50 w-[85%] p-6 top-[14rem] border-b-4 border-blue-500 bg-white ">
+                                <h4 class="text-base text-slate-400 uppercase">cleaning</h4>
+                                <h1 class="text-gray-800 text-xl font-extrabold">Temporary Ruling Issued</h1>
+                                <h5 class="py-3 text-base font-semibold text-slate-400">Washla has met the demands of a
+                                    growing world cleaning tremendous.</h5>
+                                <div class="flex py-3 gap-5 items-center flex-nowrap">
+                                    <div class="w-14 h-14 rounded-full bg-blue-200 overflow-hidden">
+                                        <img src="./assets/img2.png" alt="User-Image"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-base font-bold text-gray-800">Laura Jones</h5>
+                                        <p class="text-sm font-medium text-slate-400">Accounting</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="service-card flex justify-center relative pt-10 pb-10 h-[300px] bg-[url('./assets/cleaner3.webp')] bg-cover bg-center">
+                            <div class="absolute bg-blue-400 text-center text-white px-5 py-3 right-0 top-0">
+                                <h1 class="text-3xl font-bold">10</h1>
+                                <h4 class="text-lg">Nov</h4>
+                            </div>
+                            <div
+                                class="absolute shadow-lg text-red-50 w-[85%] p-6 top-[14rem] border-b-4 border-blue-500 bg-white ">
+                                <h4 class="text-base text-slate-400 uppercase">cleaning</h4>
+                                <h1 class="text-gray-800 text-xl font-extrabold">Temporary Ruling Issued</h1>
+                                <h5 class="py-3 text-base font-bold text-slate-400">Washla has met the demands of a
+                                    growing world cleaning tremendous.</h5>
+                                <div class="flex py-3 gap-5 items-center flex-nowrap">
+                                    <div class="w-14 h-14 rounded-full bg-blue-200 overflow-hidden">
+                                        <img src="./assets/img2.png" alt="User-Image"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-base font-bold text-gray-800">Matt Ryan</h5>
+                                        <p class="text-sm font-medium text-slate-400">Lawyer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <footer id="contact" class="flex flex-col items-center justify-center bg-slate-200">
+            <section
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-[85vw] p-4 justify-evenly gap-[2rem] gap-y-[3rem] py-16 border-b-2 border-slate-400">
+                <div class="">
+                    <div>
+                        <img class="h-11 w-auto" src="./assets/amisologo.png" alt="Amiso Logo">
+                    </div>
+                    <div class="py-8">
+                        <h4 class="text-base text-slate-400">Washla customers has a tremendous opportunity to answer the
+                            call of
+                            logistics.</h4>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-xl font-bold pb-4">Get In Touch</h3>
+                    <div>
+                        <h4 class="text-base text-slate-400">8273 NW 56th ST Miami, Florida,</h4>
+                        <h4 class="text-base text-slate-400">33195 United States</h4>
+                    </div>
+                    <div>
+                        <h4 class="text-base text-slate-400">info@amiso.com</h4>
+                        <h4 class="text-base text-slate-400">052 5401 3322</h4>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="text-xl font-bold pb-4">Quick Links</h3>
+                    <div class="flex justify-start gap-12">
+                        <ul class="text-slate-400 space-y-2">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-slate-400">Team</a>
+                            </li>
+                        </ul>
+                        <ul class="text-slate-400 space-y-2">
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#">Blogs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="">
+                    <h3 class="text-xl font-bold pb-4">Our Newsletter</h3>
+                    <h4 class="text-base text-slate-400 pb-4">Subscribe to our newsletter to receive the latest news
+                        about our services.
+                    </h4>
+                    <form id="newsLetter">
+                        <div class="flex flex-nowrap">
+                            <input class="ps-3 pb-3 pt-2 placeholder:text-slate-500 font-semibold bg-blue-200"
+                                id="emailNewsLetter" type="email" placeholder="Your email address">
+                            <button class="bg-blue-400 text-white rounded-r-md font-bold p-2 text-[12px]">SIGN
+                                UP</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <div class="w-[85%]">
+                <div class="py-10 flex items-center justify-between">
+                    <h2>&copy; 2023 amiso all rights reserved</h2>
+                    <ul class="flex flex-row gap-4 justify-end">
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-linkedin-in"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-carousel', {
+                perPage: 3,
+                breakpoints: {
+                    1024: { perPage: 2 },
+                    640: { perPage: 1 },
+                },
+                gap: '2rem',
+                pagination: true,
+                arrows: false,
+                classes: {
+                    pagination: 'splide__pagination custom-pagination',
+                    page: 'splide__pagination__page custom-page',
+                },
+            }).mount();
+        });
+    </script>
+    <script>
+        //Carousel
+        const carouselContent = [
+            {
+                image: './assets/img3.png',
+                preTitle: 'Renew Your Look',
+                title: 'A Tradition of Quality Cleaning',
+            },
+            {
+                image: './assets/img2.png',
+                preTitle: 'Transform Your Home',
+                title: 'Exceptional Cleaning Services',
+            },
+            {
+                image: './assets/img1.png',
+                preTitle: 'Clean Spaces, Happy Faces',
+                title: 'Experience the Difference',
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const bgImage = document.querySelector('.carousel-image img');
+            const preTitle = document.querySelector('.carousel-content h4');
+            const title = document.querySelector('.carousel-content h1');
+
+            bgImage.src = carouselContent[currentIndex].image;
+            preTitle.textContent = carouselContent[currentIndex].preTitle;
+            title.textContent = carouselContent[currentIndex].title;
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % carouselContent.length;
+            updateCarousel();
+        }
+
+        function previousCard() {
+            currentIndex = (currentIndex - 1 + carouselContent.length) % carouselContent.length;
+            updateCarousel();
+        }
+
+        updateCarousel();
+
+        //Form Submission
+        const form = document.getElementById('newsLetter');
+        const emailInput = document.getElementById('emailNewsLetter');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!email) {
+                alert("Please enter your email address.");
+                return;
+            }
+
+            const serverEndpoint = "https://example.com/api/newsletter";
+            const payload = { email };
+
+            try {
+                const response = await fetch(serverEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                if (response.ok) {
+                    alert("Thank you for signing up!");
+                    emailInput.value = "";
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to sign up: ${errorData.message || "Unknown error"}`);
+                }
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
